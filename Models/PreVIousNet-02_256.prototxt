@@ -95,10 +95,10 @@ layer {
   }
 }
 layer {
-  name: "FCl2_1000"
+  name: "FCl1_1000"
   type: "InnerProduct"
   bottom: "data"
-  top: "FCl2_1000"
+  top: "FCl1_1000"
   convolution_param {
     bias_filler {
       type: "msra"
@@ -121,7 +121,7 @@ layer {
 layer {
   name: "Softmax_1000"
   type: "Softmax"
-  bottom: "FCl2_1000"
+  bottom: "FCl1_1000"
   top: "Softmax_1000"
 }
 layer {
