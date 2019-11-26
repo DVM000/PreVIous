@@ -1,0 +1,654 @@
+name: "PreVIousNet-02"
+input: "data"
+input_dim: 1
+input_dim: 256
+input_dim: 1
+input_dim: 1
+layer {
+  name: "FCl1_512"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl1_512"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 512
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl1_1024"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl1_1024"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1024
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl1_2048"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl1_2048"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2048
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl1_4096"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl1_4096"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 4096
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl1_10"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl1_10"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 10
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_1000"
+  type: "InnerProduct"
+  bottom: "data"
+  top: "FCl2_1000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_10"
+  type: "Softmax"
+  bottom: "FCl1_10"
+  top: "Softmax_10"
+}
+layer {
+  name: "Softmax_1000"
+  type: "Softmax"
+  bottom: "FCl2_1000"
+  top: "Softmax_1000"
+}
+layer {
+  name: "FCl2_0_1024"
+  type: "InnerProduct"
+  bottom: "FCl1_512"
+  top: "FCl2_0_1024"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1024
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_0_2048"
+  type: "InnerProduct"
+  bottom: "FCl1_512"
+  top: "FCl2_0_2048"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2048
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_0_4096"
+  type: "InnerProduct"
+  bottom: "FCl1_512"
+  top: "FCl2_0_4096"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 4096
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_0_10"
+  type: "InnerProduct"
+  bottom: "FCl1_512"
+  top: "FCl2_0_10"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 10
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_0_1000"
+  type: "InnerProduct"
+  bottom: "FCl1_512"
+  top: "FCl2_0_1000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax0"
+  type: "Softmax"
+  bottom: "FCl1_512"
+  top: "Softmax0"
+}
+layer {
+  name: "FCl2_1_1024"
+  type: "InnerProduct"
+  bottom: "FCl1_1024"
+  top: "FCl2_1_1024"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1024
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_1_2048"
+  type: "InnerProduct"
+  bottom: "FCl1_1024"
+  top: "FCl2_1_2048"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2048
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_1_4096"
+  type: "InnerProduct"
+  bottom: "FCl1_1024"
+  top: "FCl2_1_4096"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 4096
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_1_10"
+  type: "InnerProduct"
+  bottom: "FCl1_1024"
+  top: "FCl2_1_10"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 10
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_1_1000"
+  type: "InnerProduct"
+  bottom: "FCl1_1024"
+  top: "FCl2_1_1000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax1"
+  type: "Softmax"
+  bottom: "FCl1_1024"
+  top: "Softmax1"
+}
+layer {
+  name: "FCl2_2_1024"
+  type: "InnerProduct"
+  bottom: "FCl1_2048"
+  top: "FCl2_2_1024"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1024
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_2_2048"
+  type: "InnerProduct"
+  bottom: "FCl1_2048"
+  top: "FCl2_2_2048"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2048
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_2_4096"
+  type: "InnerProduct"
+  bottom: "FCl1_2048"
+  top: "FCl2_2_4096"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 4096
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_2_10"
+  type: "InnerProduct"
+  bottom: "FCl1_2048"
+  top: "FCl2_2_10"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 10
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_2_1000"
+  type: "InnerProduct"
+  bottom: "FCl1_2048"
+  top: "FCl2_2_1000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax2"
+  type: "Softmax"
+  bottom: "FCl1_2048"
+  top: "Softmax2"
+}
+layer {
+  name: "FCl2_3_1024"
+  type: "InnerProduct"
+  bottom: "FCl1_4096"
+  top: "FCl2_3_1024"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1024
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_3_2048"
+  type: "InnerProduct"
+  bottom: "FCl1_4096"
+  top: "FCl2_3_2048"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2048
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_3_4096"
+  type: "InnerProduct"
+  bottom: "FCl1_4096"
+  top: "FCl2_3_4096"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 4096
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_3_10"
+  type: "InnerProduct"
+  bottom: "FCl1_4096"
+  top: "FCl2_3_10"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 10
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "FCl2_3_1000"
+  type: "InnerProduct"
+  bottom: "FCl1_4096"
+  top: "FCl2_3_1000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 1000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax3"
+  type: "Softmax"
+  bottom: "FCl1_4096"
+  top: "Softmax3"
+}
+layer {
+  name: "FC_to_2"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_2"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_2"
+  type: "Softmax"
+  bottom: "FC_to_2"
+  top: "Softmax_2"
+}
+layer {
+  name: "FC_to_50"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_50"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 50
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_50"
+  type: "Softmax"
+  bottom: "FC_to_50"
+  top: "Softmax_50"
+}
+layer {
+  name: "FC_to_100"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_100"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 100
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_100"
+  type: "Softmax"
+  bottom: "FC_to_100"
+  top: "Softmax_100"
+}
+layer {
+  name: "FC_to_200"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_200"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 200
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_200"
+  type: "Softmax"
+  bottom: "FC_to_200"
+  top: "Softmax_200"
+}
+layer {
+  name: "FC_to_500"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_500"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 500
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_500"
+  type: "Softmax"
+  bottom: "FC_to_500"
+  top: "Softmax_500"
+}
+layer {
+  name: "FC_to_2000"
+  type: "InnerProduct"
+  bottom: "FCl1_10"
+  top: "FC_to_2000"
+  convolution_param {
+    bias_filler {
+      type: "msra"
+    }
+  }
+  inner_product_param {
+    num_output: 2000
+    bias_term: true
+    weight_filler {
+      type: "msra"
+    }
+  }
+}
+layer {
+  name: "Softmax_2000"
+  type: "Softmax"
+  bottom: "FC_to_2000"
+  top: "Softmax_2000"
+}
