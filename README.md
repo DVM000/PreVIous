@@ -4,7 +4,7 @@ CNN models used in *PreVIous: A Methodology for Prediction of Visual Inference P
 
 ## Files
 * **Scripts.**
-  * create_prototxt.py: Python file for generating model definitions in Caffe format. Parameters include input dimensions (batch, channels, height, widht) and network architecture (01, 02). 
+  * create_prototxt.py: Python file for generating model definitions in Caffe format. Parameters include input dimensions (batch, channels, height, width) and network architecture (01, 02). 
      
      Use example: `create_prototxt.py --name PreVIousNet01 -v 01 -s 1 64 28 28`
 * **Models.** Generated network definitions in Caffe format. Input size (H,W,C) can be further adjusted by using the generator script with corresponding arguments.  
