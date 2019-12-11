@@ -1,4 +1,4 @@
-# PreVIousNets
+# PreVIousNet
 
 CNN models used in *PreVIous: A Methodology for Prediction of Visual Inference Performance on IoT Devices*.
 
@@ -11,7 +11,7 @@ CNN models used in *PreVIous: A Methodology for Prediction of Visual Inference P
   * PreVIousNet01.prototxt. If only a change in input resolution (HxW) is desired, just edit corresponding lines 5-6 `input_dim: H/W`. For adjusting number of input channels (C), use the model generator script.
   * PreVIousNet02.prototxt: For adjusting number of input channels (C), use the model generator script.
 * **Docs.** 
-  * Visualization figures.
+  * Visualization figure of the network.
 
 ## Citation
 D. Velasco-Montero, *et. al.*, PreVIous: A Methodology for Prediction of Visual Inference Performance on IoT Devices. 
