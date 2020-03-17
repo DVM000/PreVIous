@@ -14,4 +14,4 @@ CNN models used in *PreVIous: A Methodology for Prediction of Visual Inference P
   * Visualization figure of the network.
 
 ## Citation
-D. Velasco-Montero, *et. al.*, "PreVIous: A Methodology for Prediction of Visual Inference Performance on IoT Devices," arXiv no. 1912.06442, 2019. 
+D. Velasco-Montero, *et. al.*, "PreVIous: A Methodology for Prediction of Visual Inference Performance on IoT Devices,"  IEEE Internet of Things Journal, 2020. DOI 10.1109/JIOT.2020.2981684
